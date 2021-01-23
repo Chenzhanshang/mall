@@ -29,7 +29,7 @@ CREATE TABLE `admin_user` (
 
 /*Data for the table `admin_user` */
 
-insert  into `admin_user`(`id`,`password`,`username`) values (1,'admin','123456');
+insert  into `admin_user`(`id`,`password`,`username`) values (1,'123456','admin');
 
 /*Table structure for table `classification` */
 

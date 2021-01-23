@@ -178,6 +178,15 @@ public class ProductController {
     }
 
     /**
+     * 前往购物车
+     * @return
+     */
+    @RequestMapping("/toCart.html")
+    public String toCart(){
+        return "mall/product/cart";
+    }
+
+    /**
      * 打开搜索商品页面
      *
      * @return

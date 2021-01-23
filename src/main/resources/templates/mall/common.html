@@ -16,6 +16,27 @@
         layui.use(["layer","element"],function () {
             layer = layui.layer;
         });
+
+        function toSearch() {
+
+            $.ajax({
+                cache: true,
+                type: "POST",
+                url: "update.do",
+                data: $('.form-horizontal').serialize(),// 你的formid
+                async: false,
+                error: function (request) {
+                    alert("Connection error");
+                },
+                success: function (result) {
+                    if (result.state == 0) {
+                        alert("修改成功！");
+                    } else {
+                        alert(result.message);
+                    }
+                }
+            });
+        }
         //JavaScript代码区域
         //        ]]>
     </script>
@@ -29,7 +50,7 @@
         <!--</ul>-->
         <ul class="layui-nav layui-layout-right">
             <li class="layui-nav-item" style="color:#393D49;">
-                <form class="form-horizontal"  method="get" action="search.html" style="font-size: 20px;">
+                <form class="form-horizontal"  method="get" action="/mall/product/search.html" style="font-size: 20px;">
                     <label class="control-label" style="color:#ffffff;">商品名称：</label>
                     <input name="title" type="text" class="m-wrap large" id = "title"/>
                     <button type="submit" class="btn blue"><i class="fa fa-search"></i>搜索</button>&emsp;
