@@ -13,9 +13,6 @@ import org.springframework.transaction.annotation.EnableTransactionManagement;
  * @MapperScan("com.imlaidian.springbootdemo.dao") 扫描mybatis Mapper接口
  * @EnableScheduling 启用定时任务
  * @EnableTransactionManagement 开启事务
- *
- * @author hfb
- * @date 2017/9/18 11:13
  */
 @ServletComponentScan
 @EnableConfigurationProperties

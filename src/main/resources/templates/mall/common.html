@@ -29,6 +29,13 @@
         <!--</ul>-->
         <ul class="layui-nav layui-layout-right">
             <li class="layui-nav-item" style="color:#393D49;">
+                <form class="form-horizontal"  method="get" action="search.html" style="font-size: 20px;">
+                    <label class="control-label" style="color:#ffffff;">商品名称：</label>
+                    <input name="title" type="text" class="m-wrap large" id = "title"/>
+                    <button type="submit" class="btn blue"><i class="fa fa-search"></i>搜索</button>&emsp;
+                </form>
+            </li>
+            <li class="layui-nav-item" style="color:#393D49;">
                 <a href="javascript:;">分类</a>
                 <dl class="layui-nav-child" id="category">
 
@@ -73,7 +80,7 @@
 <div class="footer footer-index" th:fragment="foot">
     <hr style="color: #c2c2c2;" />
     <!-- 底部固定区域 -->
-    © jesse 2017
+    © design 2021
     <a href="/mall/admin/toLogin.html">后台管理系统</a>
 </div>
 

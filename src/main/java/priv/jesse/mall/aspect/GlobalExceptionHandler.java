@@ -19,9 +19,6 @@ import java.util.Set;
  * 统一异常处理
  * 在Controller中抛出的异常，GlobalExceptionHandler中定义的处理方法可以起作用
  * 其他的业务层异常也可以单独处理
- *
- * @author hfb
- * @date 2017/9/18
  */
 @ControllerAdvice
 public class GlobalExceptionHandler implements Serializable{

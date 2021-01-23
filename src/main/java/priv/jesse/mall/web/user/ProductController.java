@@ -5,6 +5,8 @@ import org.springframework.data.domain.PageRequest;
 import org.springframework.data.domain.Pageable;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestMethod;
+import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.ResponseBody;
 import priv.jesse.mall.entity.Classification;
 import priv.jesse.mall.entity.OrderItem;
@@ -93,11 +95,6 @@ public class ProductController {
         return "mall/product/category";
     }
 
-    @RequestMapping("/toCart.html")
-    public String toCart(){
-        return "mall/product/cart";
-    }
-
     /**
      * 按一级分类查找商品
      *
@@ -182,5 +179,28 @@ public class ProductController {
         return new ResultBean<>(orderItems);
     }
 
+    /**
+     * 打开搜索商品页面
+     *
+     * @return
+     */
+    @RequestMapping( value = "/search.html")
+    public String toSearchPage( String title, Map<String, Object> map) {
+        map.put("title", title);
+        return "mall/product/search";
+    }
+
+    /**
+     * 搜索商品
+     *
+     * @return
+     */
+    @ResponseBody
+    @RequestMapping("/search.do")
+    public ResultBean<List<Product>> getSearchSec(String title, int pageNo, int pageSize) {
+        Pageable pageable = new PageRequest(pageNo, pageSize);
+        List<Product> products = productService.findByTitle(title, pageable);
+        return new ResultBean<>(products);
+    }
 
 }

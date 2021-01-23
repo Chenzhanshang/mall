@@ -75,4 +75,11 @@ public interface ProductService {
      */
     void delById(int id);
 
+    /**
+     * 根据名称查找商品
+     * @param name
+     * @param pageable
+     * @return
+     */
+    List<Product> findByTitle(String name, Pageable pageable);
 }

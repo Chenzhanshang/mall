@@ -16,10 +16,6 @@ import java.util.Iterator;
 import java.util.List;
 import java.util.Map;
 
-/**
- * @author hfb
- * @date 2017/11/21
- */
 @Service
 public class ShopCartServiceImpl implements ShopCartService {
 

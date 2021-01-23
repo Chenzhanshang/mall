@@ -53,4 +53,13 @@ public interface ProductDao extends JpaRepository<Product, Integer> {
      */
     @Query(value = "SELECT * FROM (SELECT  * FROM product ORDER BY pdate DESC limit 0,24) a /*#pageable*/",nativeQuery = true)
     List<Product> findNew(Pageable pageable);
+
+    /**
+     * 通过名称查找商品列表
+     *
+     * @param title
+     * @param pageable
+     * @return
+     */
+    List<Product> findByTitleLike(String title, Pageable pageable);
 }
